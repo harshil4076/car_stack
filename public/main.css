@@ -1,0 +1,266 @@
+body{
+    background-color:;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+@import "@material/select/mdc-select";
+.topbanner{
+   width: 100%;
+   height: 550px; 
+   position: relative;
+}
+#dropdown-nav{
+    display: none;
+    position: fixed;
+    text-align: center;
+    width:100%;
+    padding: 0;
+    z-index: +10;
+}
+
+
+.dropdown-item {
+    width:100%;
+    color:black;
+    background:white;
+    text-decoration: none;
+    font-weight: ;
+    height: 50px;
+    letter-spacing: 0.2rem;
+}
+.material-icons{
+    background: none;
+    
+}
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+.banner-heading{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.3rem; 
+}
+.collection-div{
+    text-align:center;
+}
+.collection-btn{
+    text-align:center;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 0.3rem; 
+    font-size: 24px;
+    width: 200px;
+    margin: 0 auto;
+    
+}
+
+.collection-link{
+    
+color:black;
+}
+.collection-link:hover{
+    text-decoration: none;
+    color:white;
+}
+.collection-btn:hover{
+    background-color:black;
+
+}
+
+
+.navbar-custom{
+background-color: black;
+color:white;
+}
+.brandnav{
+font-weight: bold;
+font-style: ;
+color:white;
+letter-spacing: 0.3rem;
+font-size: 22pt;
+font-family: 'Oswald', sans-serif;
+
+}
+.brandnav:hover{
+text-decoration: none;
+color:white;
+}
+.toggle-button{
+    background: none;
+    color:white;
+    border:none;
+}
+
+.landingcontainer{
+    padding-left: 8%;
+    padding-right: 8%;
+}
+.mainCars{
+    border-radius: %;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16);
+}
+.img-fluid{
+   
+    border-top-left-radius: %;
+    border-top-right-radius: %;
+}
+.card-body{
+    background-color:snow;
+}
+
+.carsMake{
+    text-transform: uppercase;
+    font-size: 14px;
+   
+
+}
+
+
+.landingdisplaydiv{
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0 0 0 0 ;
+    padding: 0 0 0 0 ;
+    
+}
+.carsModel{
+    text-transform: capitalize;
+
+    font-weight: 600;
+    font-size: 28px;
+
+}
+.material-icons{
+    display: flex;
+    float: left;
+}
+.carsMilage{
+    font: 300 px Roboto,sans-serif;
+    padding: ;
+    color:#616161 ; 
+
+}
+.carsPrice{
+    font-size: 18px;
+    font-weight:  ;
+}
+.ourPrice{
+    font-size: 14px;
+    font-weight: 100 ;
+}
+.see-more-btn{
+    border: 0.5pt solid black;
+    background: white;
+    color:grey;
+    width: 150px;
+    height: 40px;
+    text-decoration: none;
+}
+.btn{
+    width: 100%;
+    background: white;
+    text-align: left;
+}
+.btn.dropdown-toggle::after{
+    display:none;
+}
+.see-more-btn:hover{
+    background: black;
+    color:white;
+}
+.form-control{
+    border: 0;
+
+}
+#help-section{
+    padding: 100px;
+}
+.center-text{
+    text-align: center;
+}
+
+.info-form{
+    list-style: none;
+    padding: 0 0 0 0;
+}
+.info-form input {
+    height: 40px;
+    width: 400px;
+    margin: 10px 10px 0 0 ;
+    border: 0.5pt solid lightgray;
+    padding-left: 10px
+}
+
+#question-area-heading p {
+    letter-spacing: 0.2rem;
+    font-size: 48px;
+    text-align: center;
+    font-weight: 600;
+}
+#questions-textarea{
+    text-align: right;
+}
+#questions-textarea textarea {
+    height: 190px;
+    width: 400px;
+    border: 0.5pt solid lightgray;
+    margin: 10px 0 0 0 ;
+}
+.book-appointment{
+   color: black;
+   background-color: white;
+   border: none;
+   height: 40px;
+   letter-spacing: 0.2rem
+}
+.book-appointment:hover{
+    color: white;
+    background-color:black;
+}
+.book-appointment-div{
+    text-align: center;
+}
+/* displaycarbyid page styling */
+.car_id_maindiv{
+    padding-left: 11%;
+    padding-right: 11%;
+}
+.img_id_main{
+    width: 100%;
+}
+.car_id_make{
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+    font-weight: 600;
+    line-height: 80%;
+}
+.car_id_model{
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.car_id_trans{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.car_id_milage{
+    font-weight: bold;
+}
+.car_id_price{
+    font-size: 24px;
+}
+.get_your_price{
+    border: 0.5pt solid black;
+    background: white;
+    color:grey;
+    width: 250px;
+    height: 60px;
+    text-decoration: none;
+}
+.get_your_price:hover{
+    background: black;
+    color:white;
+}
+.get_your_price:focus{
+    color:white;
+}

@@ -1,0 +1,22 @@
+<% include partials/header %>
+<h1>admin page
+</h1>
+<div class="row">
+    <% cars.forEach(function(cars){ %>
+        <div class="col-lg-4">
+            <p><%= cars.make %></p>
+            <p><%= cars.model %></p>
+            <p><%= cars.year %></p>
+            <p><%= cars.price %></p>
+
+            <img class="img-fluid" src="<%= cars.image1 %>">
+            <a class="btn btn-warning" href="/admin/<%= cars.id %>/edit">Edit</a>
+
+            <form action="/admin/<%=cars.id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+
+    <% });  %>
+</div>
+<% include partials/footer %>

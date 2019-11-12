@@ -1,0 +1,39 @@
+<% include partials/header %>
+<div class="car_id_maindiv pt-5">
+        <p class="car_id_make"><%=car.year%> <%=car.make%></p>
+        <p class="car_id_model"><%=car.model%></p>
+    <div class="row">
+        <div class="col-lg-7">
+            <img class="img-fluid img_id_main" src="<%= car.image1%>">
+        </div>
+        <div class="col-lg-5">
+            <div class="row px-3 py-3 ">
+                <div class="col-6 border-bottom">
+                    <p class="car_id_trans"><%=car.transmission%></p>
+                </div>
+                <div class="col-6 border-bottom">
+                        <i class="material-icons">speed</i> 
+                    <p class="car_id_milage"><%=car.milage%></p>
+                </div>
+            </div>
+            <div class="row px-3 py-3">
+                    <div class="col-6">
+                        <p class="mb-0 pt-2">Available At:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="car_id_price"> $<%=car.price%></p>
+                    </div>
+            </div>
+            <div class="row px-3 py-3">
+                    <div class="col-6">
+                        <a class="get_your_price px-3 py-3">GET YOUR PRICE</a>
+                    </div>
+                    <div class="col-6">
+                    </div>
+            </div>
+        </div>
+            
+
+    </div> 
+</div>
+<% include partials/footer %>

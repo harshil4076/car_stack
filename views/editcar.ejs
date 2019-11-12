@@ -1,0 +1,83 @@
+<% include partials/header %>
+
+<div class="d-flex justify-content-center">
+    <h1>Edit</h1>
+    <form action="/admin/<%= car.id %>?_method=PUT" method="POST" class="">
+        <div class="form-group">
+            <input type="text" class="form-control"  value="<%= car.category %>" name="car[category]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.make %>" name="car[make]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.model %>" name="car[model]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.year %>" name="car[year]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.milage %>" name="car[milage]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.transmission %>" name="car[transmission]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.fueltype %>" name="car[fueltype]">
+        </div>
+        <div class="form-group">
+                <input type="text" class="form-control" value="<%= car.price %>" name="car[price]">
+            </div>
+        <div class="form-group">
+            <select class="custom-select" name="car[doors]">
+                <option selected>No of doors</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="2">2</option>
+              </select>
+        </div>
+        
+        <!-- <div class="form-group">
+            <input type="text" class="form-control" placeholder="doors" name="doors">
+        </div> -->
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.engine %>" name="car[engine]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.color %>" name="car[color]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image1 %>" name="car[image1]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image2 %>" name="car[image2]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image3 %>" name="car[image3]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image4 %>" name="car[image4]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image5 %>" name="car[image5]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image6 %>" name="car[image6]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image7 %>" name="car[image7]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image8 %>" name="car[image8]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image9 %>" name="car[image9]">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" value="<%= car.image10 %>" name="car[image10]">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div> 
+<% include partials/footer %>

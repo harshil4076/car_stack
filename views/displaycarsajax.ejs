@@ -1,0 +1,35 @@
+<% cars.forEach(function(cars){ %>
+    <div class="col-lg-3 px-0 mx-4 my-4 mainCars">
+        <div class="">
+                <img class="img-fluid" src="<%= cars.image1 %>">
+                <div class="">
+                        <div class="row px-4 pt-3">
+                                <div class="col-6 px-0 d-flex justify-content-center">
+                                        <p class="carsMake"><%= cars.year %> <%= cars.make %></p>
+            
+                                </div>
+                                <div class="col-6 d-flex justify-content-center">
+                                        <p class="carsModel"><%= cars.model %></p>
+            
+                                </div>
+                                
+                        </div>
+                        <div class="row px-4 pt-3">
+                                <div class="col-6 d-flex justify-content-center">
+                                        <p class="carsMilage"><%= cars.milage %> km</p>
+    
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center">
+                                            <p class="carsPrice">$<%= cars.price %></p>
+                
+                                    </div>
+                        </div>
+                        
+                </div>
+                
+        </div>
+        
+    </div>            
+
+<% });  %>
+</div>
