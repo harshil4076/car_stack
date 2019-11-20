@@ -157,7 +157,7 @@ color:white;
 }
 .btn{
     width: 100%;
-    background: white;
+    
     text-align: left;
 }
 .btn.dropdown-toggle::after{
@@ -263,4 +263,31 @@ color:white;
 }
 .get_your_price:focus{
     color:white;
+}
+.img_carousel{
+    height:100px;
+}
+/* Admin Page */
+.left_bar{
+}
+.admin_tab{
+    list-style: none;
+}
+.admin_tab li{
+    height: 50px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    
+}
+.admin_tab li a{
+    text-decoration: none;
+}
+.tabnames{
+    width: 100%;
+    background-color: white;
+    border: none;
+}
+.active {
+    
+    color: ;
 }

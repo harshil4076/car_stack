@@ -9,10 +9,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript">
-  $("#carmake").on("change",function(event){
+  $("#car_make").on("change",function(event){
  event.preventDefault();
  event.stopPropagation();
- var make = $("#carmake").val();
+ var make = $("#car_make").val();
  
  $.ajax({
    url: "/addcar/displaymodel", 
@@ -24,7 +24,7 @@
    }  
 }).done(function(result){
   console.log(result);
-   var div = document.getElementById("carmodel");
+   var div = document.getElementById("car_model");
    var output ="";
    result.forEach(function(carmodel){
     output +=    '<option>' +carmodel.model+ '</option>'
@@ -128,6 +128,48 @@
     x.style.display = "none";
   }
 }
+</script>
+
+<!-- add car detail ajax -->
+ 
+  <!-- <script type="text/javascript">
+    $("#add_car_details").on("click", function(event){
+        event.preventDefault();
+        event.stopPropagation();
+    $.ajax({
+        url: "/addcardetails", 
+       type: 'GET',
+       async: true,
+       contentType: "application/json"
+    }).done(function(result){
+       var admin_div = document.getElementById("admin_display");
+       admin_div.innerHTML = result;
+      
+    }).fail(function(err){
+           console.log(err);
+       })
+    });
+    </script> -->
+    <script type="text/javascript">
+      $("#add_car_make").submit((event)=>{
+          event.preventDefault()
+          event.stopPropagation()
+          var form_data = $("#add_car_make").serializeArray();
+          console.log(form_data)
+          $.ajax({
+              url: "/addcarmake", 
+              type: 'POST',
+              async: true,
+              contentType: "application/json",
+              data : JSON.stringify({form_data: form_data})
+          }).done(
+              (result)=>{
+                  console.log(result);
+              }
+          ).fail((err)=>{
+              console.log(err);
+          })
+      });
   </script>
     </body>
 

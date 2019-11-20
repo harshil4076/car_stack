@@ -1,22 +1,64 @@
 <% include partials/header %>
-<h1>admin page
-</h1>
+
 <div class="row">
-    <% cars.forEach(function(cars){ %>
-        <div class="col-lg-4">
-            <p><%= cars.make %></p>
-            <p><%= cars.model %></p>
-            <p><%= cars.year %></p>
-            <p><%= cars.price %></p>
-
-            <img class="img-fluid" src="<%= cars.image1 %>">
-            <a class="btn btn-warning" href="/admin/<%= cars.id %>/edit">Edit</a>
-
-            <form action="/admin/<%=cars.id%>?_method=DELETE" method="POST">
-                <button class="btn btn-danger">Delete</button>
-                </form>
-            </div>
-
-    <% });  %>
+    <div class="col-2 mt-5 left_bar">
+        <ul class="admin_tab pl-0">
+            <li><button class="tabnames" onclick="tabfunction(event, 'main_dash')">Main Dash</button></li>
+            <li><button class="tabnames" onclick="tabfunction(event, 'add_car_details' )" >Add Car Details</button></li>
+            <li><button class="tabnames" onclick="tabfunction(event,'add_stock' )">Add Stock</button></li>
+            <li><button class="tabnames" onclick="tabfunction(event, 'display_edit')">Display/Edit </button></li>
+            <li><button class="tabnames" onclick="tabfunction(event, 'numbers')">Numbers</button></li>
+        </ul>
+    </div>
+    <div class="col-10">
+        <div id="main_dash" class="tabcontent">
+            <% cars.forEach(function(cars){ %>
+                <div class="col-lg-4">
+                    <p><%= cars.make %></p>
+                    <p><%= cars.model %></p>
+                    <p><%= cars.year %></p>
+                    <p><%= cars.price %></p>
+        
+                    <img class="img-fluid" src="<%= cars.image1 %>">
+                    <a class="btn btn-warning" href="/admin/<%= cars.id %>/edit">Edit</a>
+        
+                    <form action="/admin/<%=cars.id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+        
+            <% });  %>
+        </div>
+        <div id="add_car_details" class="tabcontent">
+            <h1>add car details</h1>
+            <% include partials/addcarmake %>
+        </div>
+        <div id="add_stock" class="tabcontent">
+            <h1>add stock</h1>
+            <% include partials/addcar %>
+        </div>
+        <div id="display_edit" class="tabcontent">
+            <h1>display/edit</h1>
+        </div>
+        <div id="numbers" class="tabcontent">
+            <h1>numbers</h1>
+        </div>
+    </div>
 </div>
+
+<script type="text/javascript"> 
+function tabfunction(evt , tab_name){
+var i, tabcontent, tabnames;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i<tabcontent.length; i++){
+        tabcontent[i].style.display = "none"
+    }
+    tabnames = document.getElementsByClassName("tabnames");
+    for (i=0; i<tabnames.length; i++){
+        tabnames[i].className = tabnames[i].className.replace("active", "");
+    }
+    document.getElementById(tab_name).style.display = "block"
+    evt.currentTarget.className += " active";
+}
+</script>
 <% include partials/footer %>
