@@ -1,13 +1,11 @@
 body{
-    background-color:;
     font-family: 'Titillium Web', sans-serif;
 
 }
 @import "@material/select/mdc-select";
 .topbanner{
    width: 100%;
-   height: 550px; 
-   position: relative;
+   height: 90vh
 }
 #dropdown-nav{
     display: none;
@@ -24,7 +22,6 @@ body{
     color:black;
     background:white;
     text-decoration: none;
-    font-weight: ;
     height: 50px;
     letter-spacing: 0.2rem;
 }
@@ -74,13 +71,13 @@ color:white;
 }
 .brandnav{
 font-weight: bold;
-font-style: ;
 color:white;
 letter-spacing: 0.3rem;
 font-size: 22pt;
 font-family: 'Oswald', sans-serif;
 
 }
+
 .brandnav:hover{
 text-decoration: none;
 color:white;
@@ -96,14 +93,9 @@ color:white;
     padding-right: 8%;
 }
 .mainCars{
-    border-radius: %;
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16);
 }
-.img-fluid{
-   
-    border-top-left-radius: %;
-    border-top-right-radius: %;
-}
+
 .card-body{
     background-color:snow;
 }
@@ -135,13 +127,11 @@ color:white;
 }
 .carsMilage{
     font: 300 px Roboto,sans-serif;
-    padding: ;
     color:#616161 ; 
 
 }
 .carsPrice{
     font-size: 18px;
-    font-weight:  ;
 }
 .ourPrice{
     font-size: 14px;
@@ -184,26 +174,19 @@ color:white;
 }
 .info-form input {
     height: 40px;
-    width: 400px;
-    margin: 10px 10px 0 0 ;
-    border: 0.5pt solid lightgray;
-    padding-left: 10px
-}
-
-#question-area-heading p {
+    width: 100%;
     letter-spacing: 0.2rem;
-    font-size: 48px;
     text-align: center;
-    font-weight: 600;
+    border: 0.5pt solid lightgray;
+    margin-bottom: 5px;
+
 }
-#questions-textarea{
-    text-align: right;
+#questions-textarea {
+    text-align: center;
 }
 #questions-textarea textarea {
-    height: 190px;
-    width: 400px;
     border: 0.5pt solid lightgray;
-    margin: 10px 0 0 0 ;
+    height: 90%;
 }
 .book-appointment{
    color: black;
@@ -268,8 +251,7 @@ color:white;
     height:100px;
 }
 /* Admin Page */
-.left_bar{
-}
+
 .admin_tab{
     list-style: none;
 }
@@ -287,7 +269,30 @@ color:white;
     background-color: white;
     border: none;
 }
-.active {
-    
-    color: ;
+/* why section */
+.whySection{
+    font-size: 55px;
 }
+.atCarstack{
+    font-size: 35px;
+}
+.textCarstack{
+    font-size: 14px;
+}
+@media only screen and (max-width: 992px) {
+    .whySection{
+        font-size: 40px;
+    }
+    .atCarstack{
+        font-size: 24px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .whySection{
+        font-size: 28px;
+    }
+    .atCarstack{
+        font-size: 20px;
+    }
+}
+

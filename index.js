@@ -9,15 +9,19 @@ const errorHandler = require("./handlers/error");
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth")
 // models
 const db = require("./models")
-
+// view imports
+const landing = require('./views/landing/index.js')
+const searchPage = require('./views/searchpage/index')
 //routes
 const authRoutes = require("./routes/auth");
 const adRoutes = require("./routes/ads")
+
+app.use(express.static('public'));
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-//using routes
+//using api routes
 app.use("/api/auth", authRoutes);
 app.use("/api/user/:id/ads",loginRequired, ensureCorrectUser, adRoutes)
 app.get("/api/ads", async function(req,res,next){
@@ -33,6 +37,15 @@ app.get("/api/ads", async function(req,res,next){
         return next(err)
     }
 })
+
+app.get("/", function (req, res) {
+    res.send(landing())
+})
+
+app.get("/search", function (req, res) {
+    res.send(searchPage())
+})
+
 app.use(function(req, res, next){
 	let err = new Error("Not Found")
 	err.status = 404;

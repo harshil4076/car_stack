@@ -39,9 +39,7 @@ const adSchema = new mongoose.Schema({
     price: {
         type: Number,
     },
-    image: {
-        type: Array
-    },
+    image:[String],
     description: {
         type: String
     },
