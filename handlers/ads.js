@@ -15,6 +15,7 @@ exports.myGarage = async function(req, res, next){
 
 exports.createNewAd = async function(req, res, next){
     try{
+   
         let newad = await db.NewAd.create({
                         category: req.body.category,
                         make: req.body.make,
@@ -54,6 +55,20 @@ exports.getAd = async function (req, res, next){
 
 exports.updateAd = async function(req, res, next){
     try{
+        //to delete imageUrl from the image array
+        if (req.body.deleteImageUrl){
+            // find ad by Id
+            let updatedAd = await db.NewAd.findByIdAndUpdate(req.params.ad_id, {
+                $pull: { "image" : req.body.deleteImageUrl }
+            })
+
+            // delete the image url
+            //response with updated ad
+        }else if(req.body.image){
+            let imageUrlList = req.body.image;
+                let updatedAd = await db.NewAd.findByIdAndUpdate(req.params.ad_id, 
+                    {$push: {"image" : {$each : imageUrlList }}})
+        }
         let updatedAd = await db.NewAd.findByIdAndUpdate(req.params.ad_id, {
             category: req.body.category,
             make: req.body.make,
@@ -69,8 +84,7 @@ exports.updateAd = async function(req, res, next){
             image: req.body.image,
             description: req.body.description
 
-        });
-        
+            });
         let foundad = await db.NewAd.findById(req.params.ad_id);
         return res.status(200).json(foundad)
     }

@@ -44,7 +44,7 @@ exports.signin = async function(req, res, next){
 exports.signup = async function(req, res, next){
     try{
         let user = await db.User.create(req.body);
-        let { id, username, email, contactNo } = user;
+        let { id, username, email } = user;
         let token = jwt.sign({
             id,
             username,
