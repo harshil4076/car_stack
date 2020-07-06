@@ -17,12 +17,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    profileImageUrl: {
-        type: String
-    },
-    contactNo: {
-        type: Number
-    },
     myGarage : [
         {
             type: mongoose.Schema.Types.ObjectId,
