@@ -17,6 +17,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    resetPasswordToken: {
+       type: String
+    },
+    resetPasswordExpires: {
+        type:Date
+    },
     myGarage : [
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -28,6 +34,8 @@ const userSchema = new mongoose.Schema({
 userSchema.pre("save", async function(next){
     try{
         if(!this.isModified('password')){
+            let hashedPassword = await bcrypt.hash(this.password, 10);
+            this.password = hashedPassword;
             return next();
         }
         let hashedPassword = await bcrypt.hash(this.password, 10);
